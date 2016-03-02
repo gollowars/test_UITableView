@@ -30,7 +30,8 @@ class CustomCell:UITableViewCell {
   func setCell(cellObj:CellObj){
     titleLable.text = cellObj.name
     contentLabel.text = cellObj.text
-    footerLabel.text = String(cellObj.id)
+    footerLabel.text = String(cellObj.id!)
+
 
     setStyle()
   }
@@ -44,5 +45,6 @@ class CustomCell:UITableViewCell {
     contentLabel.sizeToFit()
     footerLabel.sizeToFit()
 
+    titleLable.font = UIFont.boldSystemFontOfSize(20)
   }
 }

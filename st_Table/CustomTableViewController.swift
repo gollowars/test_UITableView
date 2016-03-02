@@ -12,7 +12,7 @@ class CustomTableViewController: UIViewController {
   var tbv: UITableView!
 
   var exampleDataSource = [CellObj]()
-  let headerHeight: CGFloat = 0
+  let headerHeight: CGFloat = 30
 	let cellName = "cell"
 
   init(){
@@ -24,7 +24,7 @@ class CustomTableViewController: UIViewController {
 				str += str
       }
 
-      let name = "ashikawa yoshizumi \n ashi"
+      let name = "title : name"
       let content = str
       let id = i
       let obj = CellObj(id: id, name: name, text: content)
@@ -76,32 +76,31 @@ extension CustomTableViewController:UITableViewDelegate,UITableViewDataSource {
 
 	//header
   func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    let label = UILabel(frame: CGRect(x:50, y:0, width: tableView.frame.width-100, height: headerHeight))
+    let label = UILabel(frame: CGRect(x:20, y:10, width: tableView.frame.width-100, height: headerHeight))
     let view = UIView(frame: CGRectMake(0,0,0,0))
 
     label.font = UIFont.italicSystemFontOfSize(25)
     label.numberOfLines = 0 //こいつら設定しないと高さ自動調整されない
     label.backgroundColor = UIColor.clearColor()
     label.textColor =  UIColor(red: 217/255, green: 0, blue: 0, alpha: 1)
-    label.text = "タイトル"
+    label.text = "セクションタイトル"
     label.sizeToFit()
     label.autoresizingMask = .FlexibleRightMargin
     view.addSubview(label)
-
 
     tbv.tableHeaderView = view
     return view
   }
 
-  // Cell
-//  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//    let cell = tableView.dequeueReusableCellWithIdentifier(cellName, forIndexPath: indexPath)
-//
-//    return 50
-//  }
+  // Cell　これなしで出来る。
+  //  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+  //    let cell = tableView.dequeueReusableCellWithIdentifier(cellName, forIndexPath: indexPath)
+  //
+  //    return 50
+  //  }
 
   func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    return +headerHeight
+    return headerHeight
   }
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

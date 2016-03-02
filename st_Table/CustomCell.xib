@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,25 +15,42 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="163.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dQ-ir-blC">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dQ-ir-blC">
                         <rect key="frame" x="8" y="8" width="304" height="34"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="contents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXe-co-O6d">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="contents" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXe-co-O6d">
                         <rect key="frame" x="8" y="48" width="304" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="footer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifF-Rd-gfN">
-                        <rect key="frame" x="8" y="81" width="304" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="footer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifF-Rd-gfN">
+                        <rect key="frame" x="8" y="86" width="304" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="XfD-fw-W2T"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="2dQ-ir-blC" firstAttribute="top" secondItem="fcl-4g-oDx" secondAttribute="topMargin" constant="10" id="2KW-GH-Dyn"/>
+                    <constraint firstItem="nXe-co-O6d" firstAttribute="leading" secondItem="fcl-4g-oDx" secondAttribute="leadingMargin" constant="15" id="3Zr-0J-gkt"/>
+                    <constraint firstItem="nXe-co-O6d" firstAttribute="trailing" secondItem="fcl-4g-oDx" secondAttribute="trailingMargin" id="9Eq-xV-TKd"/>
+                    <constraint firstItem="ifF-Rd-gfN" firstAttribute="leading" secondItem="fcl-4g-oDx" secondAttribute="leadingMargin" constant="15" id="Bju-6w-n1m"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ifF-Rd-gfN" secondAttribute="bottom" constant="10" id="NqB-ob-VDM"/>
+                    <constraint firstItem="ifF-Rd-gfN" firstAttribute="top" secondItem="nXe-co-O6d" secondAttribute="bottom" constant="10" id="QTk-b9-hdY"/>
+                    <constraint firstItem="nXe-co-O6d" firstAttribute="top" secondItem="2dQ-ir-blC" secondAttribute="bottom" constant="10" id="SRC-zs-TP8"/>
+                    <constraint firstItem="2dQ-ir-blC" firstAttribute="leading" secondItem="fcl-4g-oDx" secondAttribute="leadingMargin" constant="15" id="btT-zI-2nU"/>
+                    <constraint firstItem="nXe-co-O6d" firstAttribute="top" secondItem="2dQ-ir-blC" secondAttribute="bottom" constant="10" id="dHT-b4-bYh"/>
+                    <constraint firstItem="ifF-Rd-gfN" firstAttribute="trailing" secondItem="fcl-4g-oDx" secondAttribute="trailingMargin" id="fmL-FE-pwg"/>
+                    <constraint firstItem="ifF-Rd-gfN" firstAttribute="top" secondItem="nXe-co-O6d" secondAttribute="bottom" constant="12" id="hwC-99-rYt"/>
+                    <constraint firstItem="2dQ-ir-blC" firstAttribute="trailing" secondItem="fcl-4g-oDx" secondAttribute="trailingMargin" id="wLZ-q5-6aW"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="contentLabel" destination="nXe-co-O6d" id="ppb-NO-qlL"/>
