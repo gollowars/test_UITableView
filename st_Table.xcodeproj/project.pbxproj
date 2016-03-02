@@ -13,6 +13,9 @@
 		7F282EE91C8591AB00DC8210 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F282EE81C8591AB00DC8210 /* Assets.xcassets */; };
 		7F282EF71C8591AB00DC8210 /* st_TableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F282EF61C8591AB00DC8210 /* st_TableTests.swift */; };
 		7F282F021C8591AB00DC8210 /* st_TableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F282F011C8591AB00DC8210 /* st_TableUITests.swift */; };
+		7F3978D21C86E228002DB699 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3978D11C86E228002DB699 /* CustomCell.swift */; };
+		7FE4A01E1C86E45700970F2D /* CellObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE4A01D1C86E45700970F2D /* CellObj.swift */; };
+		7FE4A0201C86E54B00970F2D /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FE4A01F1C86E54B00970F2D /* CustomCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		7F282EFD1C8591AB00DC8210 /* st_TableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = st_TableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F282F011C8591AB00DC8210 /* st_TableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = st_TableUITests.swift; sourceTree = "<group>"; };
 		7F282F031C8591AB00DC8210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F3978D11C86E228002DB699 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		7FE4A01D1C86E45700970F2D /* CellObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellObj.swift; sourceTree = "<group>"; };
+		7FE4A01F1C86E54B00970F2D /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,9 +131,20 @@
 		7F282F0F1C8591C200DC8210 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				7F3978D01C86E188002DB699 /* customCell */,
 				7F282EE01C8591AB00DC8210 /* CustomTableViewController.swift */,
 			);
 			name = viewControllers;
+			sourceTree = "<group>";
+		};
+		7F3978D01C86E188002DB699 /* customCell */ = {
+			isa = PBXGroup;
+			children = (
+				7F3978D11C86E228002DB699 /* CustomCell.swift */,
+				7FE4A01D1C86E45700970F2D /* CellObj.swift */,
+				7FE4A01F1C86E54B00970F2D /* CustomCell.xib */,
+			);
+			name = customCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FE4A0201C86E54B00970F2D /* CustomCell.xib in Resources */,
 				7F282EE91C8591AB00DC8210 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +279,8 @@
 			files = (
 				7F282EE11C8591AB00DC8210 /* CustomTableViewController.swift in Sources */,
 				7F282EDF1C8591AB00DC8210 /* AppDelegate.swift in Sources */,
+				7FE4A01E1C86E45700970F2D /* CellObj.swift in Sources */,
+				7F3978D21C86E228002DB699 /* CustomCell.swift in Sources */,
 				7F282EE71C8591AB00DC8210 /* st_Table.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,6 +489,7 @@
 				7F282F081C8591AB00DC8210 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7F282F091C8591AB00DC8210 /* Build configuration list for PBXNativeTarget "st_TableTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +498,7 @@
 				7F282F0B1C8591AB00DC8210 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7F282F0C1C8591AB00DC8210 /* Build configuration list for PBXNativeTarget "st_TableUITests" */ = {
 			isa = XCConfigurationList;
@@ -485,6 +507,7 @@
 				7F282F0E1C8591AB00DC8210 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

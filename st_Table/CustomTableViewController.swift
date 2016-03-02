@@ -11,7 +11,7 @@ import UIKit
 class CustomTableViewController: UIViewController {
   var tbv: UITableView!
 
-  var textArray = [String]()
+  var exampleDataSource = [CellObj]()
   let headerHeight: CGFloat = 0
 
   init(){
@@ -23,7 +23,11 @@ class CustomTableViewController: UIViewController {
 				str += str
       }
 
-			textArray.append(String(str))
+      let name = "ashikawa"
+      let content = str
+      let id = i
+      let obj = CellObj(id: id, name: name, text: content)
+			exampleDataSource.append(obj)
     }
   }
 
@@ -40,11 +44,14 @@ class CustomTableViewController: UIViewController {
     tbv.registerClass(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
     tbv.dataSource = self
     tbv.delegate = self
+
     tbv.estimatedRowHeight = 5 //こいつら設定しないと高さ自動調整されない
     tbv.estimatedSectionHeaderHeight = 0 //こいつら設定しないと高さ自動調整されない
     tbv.rowHeight = UITableViewAutomaticDimension
     view.addSubview(tbv)
 
+		let nib = UINib(nibName: "CustomCell", bundle: nil)
+    tbv.registerNib(nib, forCellReuseIdentifier: "cell")
 
   }
 
@@ -82,7 +89,6 @@ extension CustomTableViewController:UITableViewDelegate,UITableViewDataSource {
     view.addSubview(label)
 
 
-
     tbv.tableHeaderView = view
     return view
   }
@@ -93,13 +99,14 @@ extension CustomTableViewController:UITableViewDelegate,UITableViewDataSource {
   }
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return textArray.count
+    return exampleDataSource.count
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("MyCell", forIndexPath: indexPath)
-    cell.textLabel?.text = textArray[indexPath.row]
-    cell.textLabel?.numberOfLines = 0
+    let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
+
+    cell.setCell(self.exampleDataSource[indexPath.row])
+
     return cell
   }
 }
