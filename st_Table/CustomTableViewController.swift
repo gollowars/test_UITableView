@@ -66,9 +66,7 @@ class CustomTableViewController: UIViewController {
 
     //contentsizeの高さを再計算 headerの高さを設定
 		tbv.contentSize = CGSizeMake(tbv.contentSize.width,tbv.contentSize.height+headerHeight)
-
   }
-
 
 }
 
@@ -94,9 +92,9 @@ extension CustomTableViewController:UITableViewDelegate,UITableViewDataSource {
 
   // Cell　これなしで出来る。
   //  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-  //    let cell = tableView.dequeueReusableCellWithIdentifier(cellName, forIndexPath: indexPath)
+  //    let cell = tableView.dequeueReusableCellWithIdentifier(cellName, forIndexPath: indexPath) as! CustomCell
   //
-  //    return 50
+  //    return cell.frame.height
   //  }
 
   func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
