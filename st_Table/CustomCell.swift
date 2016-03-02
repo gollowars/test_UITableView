@@ -17,7 +17,9 @@ class CustomCell:UITableViewCell {
 
   override func awakeFromNib() {
     super.awakeFromNib()
+
     // initialize
+		setStyle()
   }
 
   override func setSelected(selected: Bool, animated: Bool) {
@@ -29,5 +31,18 @@ class CustomCell:UITableViewCell {
     titleLable.text = cellObj.name
     contentLabel.text = cellObj.text
     footerLabel.text = String(cellObj.id)
+
+    setStyle()
+  }
+
+  private func setStyle(){
+    titleLable.numberOfLines = 0
+    contentLabel.numberOfLines = 0
+    footerLabel.numberOfLines = 0
+
+    titleLable.sizeToFit()
+    contentLabel.sizeToFit()
+    footerLabel.sizeToFit()
+
   }
 }

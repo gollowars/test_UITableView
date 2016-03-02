@@ -13,6 +13,7 @@ class CustomTableViewController: UIViewController {
 
   var exampleDataSource = [CellObj]()
   let headerHeight: CGFloat = 0
+	let cellName = "cell"
 
   init(){
     super.init(nibName: nil, bundle: nil)
@@ -23,7 +24,7 @@ class CustomTableViewController: UIViewController {
 				str += str
       }
 
-      let name = "ashikawa"
+      let name = "ashikawa yoshizumi \n ashi"
       let content = str
       let id = i
       let obj = CellObj(id: id, name: name, text: content)
@@ -41,7 +42,6 @@ class CustomTableViewController: UIViewController {
     let barHeight = UIApplication.sharedApplication().statusBarFrame.size.height
 
     tbv = UITableView(frame: CGRectMake(0, barHeight, view.frame.width, view.frame.height-barHeight))
-    tbv.registerClass(UITableViewCell.self, forCellReuseIdentifier: "MyCell")
     tbv.dataSource = self
     tbv.delegate = self
 
@@ -51,7 +51,7 @@ class CustomTableViewController: UIViewController {
     view.addSubview(tbv)
 
 		let nib = UINib(nibName: "CustomCell", bundle: nil)
-    tbv.registerNib(nib, forCellReuseIdentifier: "cell")
+    tbv.registerNib(nib, forCellReuseIdentifier: cellName)
 
   }
 
@@ -94,6 +94,12 @@ extension CustomTableViewController:UITableViewDelegate,UITableViewDataSource {
   }
 
   // Cell
+//  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//    let cell = tableView.dequeueReusableCellWithIdentifier(cellName, forIndexPath: indexPath)
+//
+//    return 50
+//  }
+
   func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return +headerHeight
   }
@@ -103,7 +109,7 @@ extension CustomTableViewController:UITableViewDelegate,UITableViewDataSource {
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! CustomCell
+    let cell = tableView.dequeueReusableCellWithIdentifier(cellName, forIndexPath: indexPath) as! CustomCell
 
     cell.setCell(self.exampleDataSource[indexPath.row])
 
